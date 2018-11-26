@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+We have special 50 tasks and can calculate them
 
-Things you may want to cover:
+* Ruby version 2.5.1
 
-* Ruby version
+* Rails version 5.2.1
 
-* System dependencies
+* https://rubygems.org/gems/geekhub_tasks link to gem
 
-* Configuration
+* gem 'geekhub_tasks' pass this code in your Gemfile
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* use command bundle install
