@@ -1,0 +1,30 @@
+<h1 class="text-center mt-3"><b>Task:</b> <%= @task.humanize %></h1>
+
+<% if @task.present? %>
+  <div class="w-40 mx-auto">
+    <%= form_tag show_path, method: :get do %>
+    <div class="form-group row">
+      <%= hidden_field_tag :task, @task  %>
+      <% @arguments.each do |argument| %>
+        <%= label_tag "#{argument}:", nil, class:"col-sm-1 col-form-label" %>
+        <div class="col-sm-11 mt-1">
+          <%= text_field_tag("args[#{argument}]", nil, placeholder: "Enter #{argument}", class: "form-control") %> <!-- count input = count arguments-->
+        </div>
+      <% end %>
+    </div>
+
+    <% if @result.present? %>
+      <small class="form-text text-muted mb-2"> <!--mb = margin bottom-->
+        <b>Result: </b><%= @result.map { |k, v| "#{k}: #{v}"}.join(', ') %>
+      </small>
+    <% end %>
+    <%= submit_tag 'Calculate', class: "btn btn-success" %>
+    <% end %>
+  </div>
+<% end %>
+
+<hr>
+
+<div class="text-center">
+  <%= link_to "Back", root_path, class: "btn btn-light" %>
+</div>

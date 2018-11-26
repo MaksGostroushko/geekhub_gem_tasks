@@ -1,0 +1,27 @@
+<blockquote class="blockquote text-center mb-4 mt-2">
+  <p class=" display-4">GeekHub Tasks</p>
+</blockquote>
+
+<table class="table table-hover">
+  <thead class="table-active">
+    <tr>
+      <th scope="col">Task</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+    <tr>
+      <th><%= task.to_s.humanize %></th>       <!-- humanize =  delete _ in method -->
+      <td><%= link_to "Show", show_path(task: task), class: "btn btn-success btn-sm" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="apple_pagination">
+  <div class="page_info">
+    <%= page_entries_info @tasks %>
+  </div>
+  <%= will_paginate @tasks, :container => false %>
+</div>
